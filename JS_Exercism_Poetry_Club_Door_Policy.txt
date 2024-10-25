@@ -1,0 +1,24 @@
+export function frontDoorResponse(line) {
+  return line[0];
+}
+
+export function frontDoorPassword(word) {
+  /*var word2 = word.toUpperCase();*/
+  var first = word[0];
+  var rest = word.slice(1);
+  first = first.toUpperCase();
+  rest = rest.toLowerCase();
+  return first + rest;
+  /*return word2;*/
+}
+
+export function backDoorResponse(line) {
+  var words = line.trim();
+  return words.slice(-1);
+}
+
+export function backDoorPassword(word) {
+  var first = word[0].toUpperCase();
+  var rest = word.slice(1)
+  return first + rest + ", please"
+}
