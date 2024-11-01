@@ -1,0 +1,28 @@
+// https://exercism.org/tracks/javascript/exercises/bird-watcher/edit
+
+export function totalBirdCount(birdsPerDay) {
+  var birds = 0;
+  for (let i = 0; i < birdsPerDay.length; i++){
+    birds += birdsPerDay[i];
+  }
+  return birds;
+}
+
+export function birdsInWeek(birdsPerDay, week) {
+  var weekEnd = 7 * week;
+  var weekStart = (7 * week) - 7;
+  var birds = 0;
+  for (let i = weekStart; i < weekEnd; i ++){
+    birds += birdsPerDay[i];
+  }
+  return birds;
+}
+
+export function fixBirdCountLog(birdsPerDay) {
+  for (let i = 0; i < birdsPerDay.length; i ++){
+    if (i == 0 | i % 2 == 0){
+      birdsPerDay[i] = birdsPerDay[i] + 1
+    }
+  }
+  return birdsPerDay;
+}

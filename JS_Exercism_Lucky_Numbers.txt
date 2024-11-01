@@ -1,0 +1,44 @@
+// https://exercism.org/tracks/javascript/exercises/lucky-numbers
+
+export function twoSum(array1, array2) {
+  var number1 = 0;
+  var number2 = 0;
+  var string = "";
+  var bigString = "";
+  for (let i = 0; i < array1.length; i++){
+    string = String(array1[i]);
+    bigString += string;
+  }
+  number1 = Number(bigString);
+  bigString = "";
+
+  for (let i = 0; i < array2.length; i++){
+    string = String(array2[i]);
+    bigString += string;
+  }
+  number2 = Number(bigString);
+  return number1 + number2;
+}
+
+export function luckyNumber(value) {
+  var string = String(value);
+  string = string.split("");
+  var newString = string.reverse();
+  newString = String(newString).replace(/,/g, "");
+  var newValue = Number(newString);
+  if (value === newValue) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function errorMessage(input) {
+  if (input == "" || input === undefined || input == null){
+    return "Required field";
+  } else if (input == Number(input) && Number(input) != 0){
+    return "";
+  } else {
+    return "Must be a number besides 0";
+  }
+}

@@ -1,0 +1,31 @@
+// https://exercism.org/tracks/javascript/exercises/elyses-analytic-enchantments/edit
+
+export function getCardPosition(stack, card) {
+  for (let i = 0; i < stack.length; i ++) {
+    if (stack[i] == card) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+export function doesStackIncludeCard(stack, card) {
+  return stack.includes(card);
+}
+
+export function isEachCardEven(stack) {
+  return stack.every((num) => num % 2 == 0);
+}
+
+export function doesStackIncludeOddCard(stack) {
+  return stack.some((num) => num % 2 !== 0);
+}
+
+export function getFirstOddCard(stack) {
+  return stack.find((num) => num % 2 !== 0);
+}
+
+export function getFirstEvenCardPosition(stack) {
+  var numToFind = stack.find((num) => num % 2 == 0);
+  return stack.findIndex((num) => num == numToFind);
+}
